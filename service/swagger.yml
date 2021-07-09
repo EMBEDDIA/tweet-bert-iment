@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  description: Placeholder service for sentiment analysis.
+  title: Sentiment analysis
+  version: 0.0.1
+paths:
+  /health:
+    options:
+      description: "Returns the version number of the system as well. A reply indicates the system is healthy."
+      responses:
+        '200':
+          description: OK
+    get:
+      description: "Returns the version number of the system as well. A reply indicates the system is healthy."
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            required:
+              - version
+            properties:
+              version:
+                type: string
+                example: "0.1.0"
+  /analyze:
+    options:
+      description: "Describes the available HTTP methods for this end point."
+      responses:
+        '200':
+          description: OK
+    post:
+      description: Analyze sentiments of strings
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: parameters
+          schema:
+            type: object
+            required:
+              - comments
+              - lang
+            properties:
+              comments:
+                type: array
+                items:
+                  type: string
+                example: "[]"
+              lang:
+                type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              sentiments:
+                type: array
+                items:
+                  type: string
+                example: "[]"
+        '400':
+          description: Missing or invalid inputs

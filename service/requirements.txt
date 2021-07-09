@@ -1,0 +1,8 @@
+bottle==0.12.19
+bottle-swagger-2==2.0.11
+meinheld==1.0.2
+PyYAML==5.4.1
+transformers==4.8.2
+protobuf
+sentencepiece
+torch
