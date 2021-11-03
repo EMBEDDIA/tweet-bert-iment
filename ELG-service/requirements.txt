@@ -1,0 +1,6 @@
+gunicorn
+transformers
+protobuf
+torch
+sentencepiece
+elg[flask]
